@@ -53,19 +53,21 @@ Source  Event                  Ch  Data
 ```
 
 # 3. MIDI commands
-## Knobs
+`Channel is 0`
 
-Control  | Channel | Example value
+## Knobs
+Name     | Control | Example value
 -------- | ------- | -------------
 GAIN     | 13      | value 0-127
 VOLUME   | 15      | value 0-125
 TONE     | 14      | value 0-127
-DLY/RVB  | 85      | value 0-120, 0-115 
+DLY/RVB  | 85      | 61,  value 0-120, 0-115 
 
 ## Buttons
-Control  | Channel | Example value
+Name     | Control | Example value
 -------- | ------- | -------------
-OD/DIST  | 13      | 1-**OD**, 2-**METAL**, 0-**CLEAN**
+OD/DIST  | 75      | 1-**OD**, 2-**METAL**, 0-**CLEAN**
 DRUM     | 122     | 127-**ON** 0-**OFF**
 DRUM-CHG | 123     | 0..9
+DRUM-VOL | 125     | 0..125
 TAP      | 30      | 0..127
