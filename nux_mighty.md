@@ -1,5 +1,5 @@
 # NUX Mighty Lite BT - Linux
-Howto use midi commands in Linux
+Howto use midi commands in Linux with NUX amplifier.
 
 ## 1. Bluetooth
 Simple part.
