@@ -1,6 +1,12 @@
 # NUX Mighty Lite BT - Linux
 Howto use midi commands in Linux with NUX amplifier.
 
+truly indispensable knowledge :)
+
+![](nux.jpg)
+
+
+
 ## 1. Bluetooth
 Simple part.
 
@@ -12,6 +18,7 @@ Some old adapters does't work with BTLE.
 ![](2022-01-11-17-04-12.png)
 
 
+
 # 2. Receive MIDI commands
 > Tricky part, I need more info/help here.
 
@@ -21,17 +28,29 @@ Some old adapters does't work with BTLE.
 
 Run `bluetoothctl`
 ```
+select 00:1A:7D:DA:71:0F    <---  your correct adapter here
+
 scan on
 trust CB:4E:FD:CD:AE:1F
 connect CB:4E:FD:CD:AE:1F
 pair CB:4E:FD:CD:AE:1F
 menu gatt
 list-attributes
-select-attribute /org/bluez/hci1/dev_CB_4E_FD_CD_AE_1F/service000a/char000b
-read
-write 012
+select-attribute /org/bluez/hci0/dev_CB_4E_FD_CD_AE_1F/service000a/char000b
+read128:0   Control change          0, controller 85, value 91
+128:0   Control change          0, controller 85, value 83
+
 ```
 
+Check it
+```
+❯ aseqdump -p 128:0
+Waiting for data. Press Ctrl+C to end.
+Source  Event                  Ch  Data
+128:0   Control change          0, controller 61, value 0
+128:0   Control change          0, controller 85, value 99
+128:0   Control change          0, controller 85, value 76
+```
 
 # 3. MIDI commands
 ## Knobs
